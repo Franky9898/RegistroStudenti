@@ -1,7 +1,54 @@
 package registro;
 
+import java.util.Scanner;
+
 public class Main
 {
+
+	public static void gestioneRegistro(Registro registro) //Gestisce registro in base a input utente
+	{
+		int scelta = -1;
+		int conferma = 1;
+		Scanner input = new Scanner(System.in);
+		//public Studenti(String nome, String cognome, int matricola)
+		while (conferma == 1)
+		{
+			switch (scelta)
+			{
+			case 1: //Aggiungi studente
+				System.out.println("Inserisci nome studente: ");
+				String nome = input.next();
+				System.out.println("Inserisci cognome studente: ");
+				String cognome = input.next();
+				System.out.println("Inserisci numero matricola: ");
+				int matricola = input.nextInt();
+				Studenti nuovoStudente = new Studenti(nome, cognome, matricola);
+				Registro.aggiungiStudente(registro.registro, nuovoStudente);
+				scelta = -1;
+				break;
+			case 2: //Visualizza registro
+				Registro.visualizzaStudenti(registro.registro);
+				scelta = -1;
+				break;
+			case 3: //Cerca studente
+				System.out.println("Inserisci numero matricola: ");
+				matricola = input.nextInt();
+				Registro.cercaStudente(registro.registro, matricola);
+				scelta = -1;
+				break;
+			case 4: //Salta azioni
+				scelta = -1;
+				break;
+			default:
+				System.out.println("Premi 1 per aggiungere un nuovo arrivato , 2 visualizzare tutti gli studenti, 3 cercare studente in base a numero matricola, 4 per uscire");
+				scelta = input.nextInt();
+				continue;
+			}
+			System.out.println("Vuoi fare altro? Premi 1 per sì."); //Esci
+			conferma = input.nextInt();
+		}
+		input.close();
+	}
 
 	public static void main(String[] args)
 	{
