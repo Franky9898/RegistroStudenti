@@ -50,6 +50,7 @@ public class Main
 			conferma = input.nextInt();
 		}
 		input.close();
+		System.exit(0);
 	}
 
 	public static void main(String[] args)
