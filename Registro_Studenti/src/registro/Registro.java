@@ -13,13 +13,13 @@ public class Registro
 
 	public static void aggiungiStudente(ArrayList<Studenti> registro, Studenti studente) //Si aggiunge uno studente se ha matricola univoca
 	{
-		int checkCounter = 0; //Parte da 1 perché deve arrivare a registro.size
+		int checkCounter = 0;
 		for (int i = 0; i < registro.size(); i++)
 		{
 			if (studente.getMatrNumber() != registro.get(i).getMatrNumber())
 				checkCounter++; //Per il momento è unico
 			else
-				break; //Non è unico si interrompe il for
+				break; //Non è unico si interrompe il ciclo
 		}
 		if (checkCounter == registro.size()) //Si aggiunge
 		{
@@ -44,7 +44,7 @@ public class Registro
 		{
 			if (matricola == registro.get(i).getMatrNumber())
 			{
-				System.out.println("Studente trovato");
+				//System.out.println("Studente trovato");
 				Studenti.stampaStudenti(registro.get(i));
 				break;
 			} else

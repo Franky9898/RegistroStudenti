@@ -54,7 +54,8 @@ public class Main
 
 	public static void main(String[] args)
 	{
-		//Studenti studente1 = new Studenti("Francesco", "Martini", 0);
+		//Studenti studente1 = new Studenti("Francesco", "Martini", 0); //Controlla errore su numero matricola
+		//Studenti studente1 = new Studenti("F", "M", 10); //Controlla errore su numero matricola già usato
 		Studenti studente2 = new Studenti("Mario", "Rossi", 10);
 		Studenti studente3 = new Studenti("Luca", "Bianchi", 11);
 		ArrayList<Studenti> registro = new ArrayList<Studenti>();
