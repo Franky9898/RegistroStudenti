@@ -9,7 +9,7 @@ public class Studenti
 	public Studenti(String nome, String cognome, int matricola) //Costruttore con controllo su matricola negativa
 	{
 		if (matricola < 1)
-			throw new IllegalArgumentException("Il numero matricola non può essere negativo.");
+			throw new IllegalArgumentException("Il numero matricola non può essere non positivo.");
 		this.nome = nome;
 		this.cognome = cognome;
 		this.matricola = matricola;
@@ -32,7 +32,7 @@ public class Studenti
 
 	public static void stampaStudenti(Studenti studente) //Stampa personalizzata
 	{
-		System.out.println("Nome: " + studente.getFirstName() + "Cognome: " + studente.getLastName());
+		System.out.println("Nome: " + studente.getFirstName() + ". Cognome: " + studente.getLastName() + ".");
 	}
 
 }

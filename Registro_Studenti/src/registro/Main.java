@@ -1,5 +1,6 @@
 package registro;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main
@@ -44,6 +45,7 @@ public class Main
 				scelta = input.nextInt();
 				continue;
 			}
+			System.out.println("");
 			System.out.println("Vuoi fare altro? Premi 1 per sì."); //Esci
 			conferma = input.nextInt();
 		}
@@ -52,7 +54,14 @@ public class Main
 
 	public static void main(String[] args)
 	{
-
+		//Studenti studente1 = new Studenti("Francesco", "Martini", 0);
+		Studenti studente2 = new Studenti("Mario", "Rossi", 10);
+		Studenti studente3 = new Studenti("Luca", "Bianchi", 11);
+		ArrayList<Studenti> registro = new ArrayList<Studenti>();
+		registro.add(studente2);
+		registro.add(studente3);
+		Registro scuola = new Registro(registro);
+		gestioneRegistro(scuola);
 	}
 
 }

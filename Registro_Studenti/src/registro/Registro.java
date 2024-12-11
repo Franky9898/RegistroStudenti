@@ -13,7 +13,7 @@ public class Registro
 
 	public static void aggiungiStudente(ArrayList<Studenti> registro, Studenti studente) //Si aggiunge uno studente se ha matricola univoca
 	{
-		int checkCounter = 1; //Parte da 1 perché deve arrivare a registro.size
+		int checkCounter = 0; //Parte da 1 perché deve arrivare a registro.size
 		for (int i = 0; i < registro.size(); i++)
 		{
 			if (studente.getMatrNumber() != registro.get(i).getMatrNumber())
@@ -39,6 +39,7 @@ public class Registro
 
 	public static void cercaStudente(ArrayList<Studenti> registro, int matricola) //Cerca lo studente in base a numero matricola
 	{
+		int c = 0;
 		for (int i = 0; i < registro.size(); i++)
 		{
 			if (matricola == registro.get(i).getMatrNumber())
@@ -47,8 +48,10 @@ public class Registro
 				Studenti.stampaStudenti(registro.get(i));
 				break;
 			} else
-				System.out.println("Studente non trovato");
+				c++;
 		}
+		if (c == registro.size())
+			System.out.println("Studente non trovato");
 	}
 
 }
